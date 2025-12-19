@@ -326,17 +326,17 @@ void knickknack_std_set(knickknack_object* object, void* key_or_index, knickknac
   switch(object->kind)
   {
     case knickknack_kind::LIST:
-    {
-      auto inst = (std::vector<knickknack_object*>*)object->instance;
-      (*inst)[(size_t)key_or_index] = value;
-    }
+      {
+        auto inst = (std::vector<knickknack_object*>*)object->instance;
+        (*inst)[(size_t)key_or_index] = value;
+      }
       break;
     case knickknack_kind::DICT:
-    {
-      auto inst = (std::unordered_map<std::string, knickknack_object*>*)object->instance;
-      auto key = (std::string*)((knickknack_object*)key_or_index)->instance;
-      (*inst)[*key] = value;
-    }
+      {
+        auto inst = (std::unordered_map<std::string, knickknack_object*>*)object->instance;
+        auto key = (std::string*)((knickknack_object*)key_or_index)->instance;
+        (*inst)[*key] = value;
+      }
       break;
     default:
       break;
@@ -358,22 +358,22 @@ bool knickknack_std_exists(knickknack_object* object, void* key_or_index)
     case knickknack_kind::STRING:
     case knickknack_kind::STRING_LITERAL:
     case knickknack_kind::LIST:
-    {
-      auto size = knickknack_std_size(object);
-      return size > (size_t)key_or_index;
-    }
+      {
+        auto size = knickknack_std_size(object);
+        return size > (size_t)key_or_index;
+      }
       break;
     case knickknack_kind::DICT:
-    {
-      auto inst = (std::unordered_map<std::string, knickknack_object*>*)object->instance;
-      auto key = (std::string*)((knickknack_object*)key_or_index)->instance;
-      return (inst->find(*key) != inst->end());
-    }
+      {
+        auto inst = (std::unordered_map<std::string, knickknack_object*>*)object->instance;
+        auto key = (std::string*)((knickknack_object*)key_or_index)->instance;
+        return (inst->find(*key) != inst->end());
+      }
       break;
     default:
       break;
   }
-  
+
   return false;
 }
 
@@ -423,7 +423,7 @@ void* knickknack_internal_unbox_primitives(knickknack_object* object)
 void* knickknack_std_get(knickknack_object* object, void* key_or_index)
 {
   void* value = nullptr;
-  
+
   switch(object->kind)
   {
     case knickknack_kind::STRING:
@@ -451,7 +451,7 @@ void* knickknack_std_get(knickknack_object* object, void* key_or_index)
     default:
       break;
   }
-  
+
   return value;
 }
 

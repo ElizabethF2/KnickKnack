@@ -61,7 +61,7 @@ knickknack_binary* knickknack_internal_acquire_script(std::string name)
       auto lock = KNICKKNACK_ACQUIRE_RAII_LOCK(g_knickknack_internal_mutex);
       name = knickknack_thread_local_name(name);
     #endif
-    
+
     if (g_knickknack_script_binaries.find(name) != g_knickknack_script_binaries.end())
     {
       binary = g_knickknack_script_binaries[name];

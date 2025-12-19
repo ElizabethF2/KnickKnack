@@ -10,7 +10,7 @@ void knickknack_ext_unload_library(void* data)
 knickknack_object* knickknack_ext_load_library(knickknack_object* name)
 {
   knickknack_object* result = nullptr;
-  
+
   #if defined(__WIN32__)
   if (auto libname = knickknack_get_readonly_string_from_object(name))
   {
@@ -37,7 +37,7 @@ void* knickknack_ext_get_function(knickknack_object* lib, knickknack_object* nam
       }
     }
   #endif
-  
+
   return nullptr;
 }
 

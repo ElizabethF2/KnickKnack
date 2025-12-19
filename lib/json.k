@@ -142,7 +142,7 @@ feed:; func_args this, c
   stack = std_get(this, "stack")
   ssize = std_size(stack)
   index = ssize - 1
-  
+
   # Handle Strings
   in_string = std_get(this, "in_string")
   if_not in_string goto _else16

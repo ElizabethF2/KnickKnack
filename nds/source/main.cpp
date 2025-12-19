@@ -40,13 +40,13 @@ int main(void)
   auto res = (int)knickknack_call("main.k", "main");
   printf("Done!  Res = %d\n\n\n", res);
 
-	while(1) 
+  while(1)
   {
-		swiWaitForVBlank();
-		scanKeys();
-		int keys = keysDown();
-		if (keys & KEY_START) break;	
-	}
+    swiWaitForVBlank();
+    scanKeys();
+    int keys = keysDown();
+    if (keys & KEY_START) break;
+  }
 
-	return 0;
+  return 0;
 }

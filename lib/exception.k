@@ -6,7 +6,7 @@ export throw
 export matches
 export catch
 export assert_handled
-
+export current_exception
 
 error_exception_thrown:; return 40399
 
@@ -111,3 +111,6 @@ assert_handled:
 
   exception = 0
   return
+
+current_exception:
+  return g_current_exception

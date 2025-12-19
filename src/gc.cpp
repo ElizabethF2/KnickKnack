@@ -265,9 +265,9 @@ void* knickknack_realloc_with_gc(void* ptr, size_t new_size)
   {
     return new_ptr;
   }
-  
+
   knickknack_std_gc(false);
-  
+
   new_ptr = realloc(ptr, new_size);
   if (new_ptr)
   {

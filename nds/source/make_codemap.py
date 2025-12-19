@@ -6,7 +6,8 @@ buffer = 'static std::unordered_map<std::string, std::string> s_code_map = { '
 
 replace_map = [('\\','\\\\'), ('"', '\\"'), ('\n','\\n')]
 
-for base_path in ['.', '..\\..\\lib']:
+for base_path in [os.path.curdir,
+                  os.path.join(os.path.pardir, os.path.pardir, 'lib')]:
     for file in os.listdir(base_path):
       if file.endswith('.k'):
         with open(os.path.join(base_path, file)) as f:
